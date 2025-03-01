@@ -1,0 +1,35 @@
+"use client";
+import React from "react";
+import { Cursor, Typewriter, useTypewriter } from "react-simple-typewriter";
+import PageWrapper from "./PageWrapper";
+const Banner = ({ className }) => {
+  const [text] = useTypewriter({
+    words: [
+      "Your Trusted wedding Platform ",
+      "Providing Best user experience for customers.",
+      "We maintain the best quality  ",
+      "Best of luck!",
+    ],
+    loop: true,
+    typeSpeed: 30,
+    deleteSpeed: 10,
+    delaySpeed: 2000,
+    // onLoopDone: () => console.log(`loop completed after 3 runs.`),
+  });
+  return (
+    <div className={`${className}`}>
+      <PageWrapper>
+        <div className=" container mx-auto flex flex-col justify-center items-center   ">
+          <h1 className="text-[20px] lg:regular-64 py-2 uppercase font-bold">
+            Wedding Hub{" "}
+          </h1>
+          <p className="text-[16px] lg:text-[18px] font-normal mt-2">
+            {text} <Cursor cursorBlinking cursorStyle="|" cursorColor="#fff" />
+          </p>
+        </div>
+      </PageWrapper>
+    </div>
+  );
+};
+
+export default Banner;
